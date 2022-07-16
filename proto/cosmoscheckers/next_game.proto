@@ -1,0 +1,9 @@
+syntax = "proto3";
+package oxkai27.cosmoscheckers.cosmoscheckers;
+
+option go_package = "github.com/OxKai27/cosmos-checkers/x/cosmoscheckers/types";
+
+message NextGame {
+  uint64 idValue = 1; 
+  
+}

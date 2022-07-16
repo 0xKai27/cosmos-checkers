@@ -9,10 +9,19 @@
  * ---------------------------------------------------------------
  */
 
+export interface CosmoscheckersNextGame {
+  /** @format uint64 */
+  idValue?: string;
+}
+
 /**
  * Params defines the parameters for the module.
  */
 export type CosmoscheckersParams = object;
+
+export interface CosmoscheckersQueryGetNextGameResponse {
+  NextGame?: CosmoscheckersNextGame;
+}
 
 /**
  * QueryParamsResponse is response type for the Query/Params RPC method.
@@ -229,6 +238,22 @@ export class HttpClient<SecurityDataType = unknown> {
  * @version version not set
  */
 export class Api<SecurityDataType extends unknown> extends HttpClient<SecurityDataType> {
+  /**
+   * No description
+   *
+   * @tags Query
+   * @name QueryNextGame
+   * @summary Queries a NextGame by index.
+   * @request GET:/OxKai27/cosmos-checkers/cosmoscheckers/next_game
+   */
+  queryNextGame = (params: RequestParams = {}) =>
+    this.request<CosmoscheckersQueryGetNextGameResponse, RpcStatus>({
+      path: `/OxKai27/cosmos-checkers/cosmoscheckers/next_game`,
+      method: "GET",
+      format: "json",
+      ...params,
+    });
+
   /**
    * No description
    *
