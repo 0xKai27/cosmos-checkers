@@ -12,7 +12,6 @@ func DefaultGenesis() *GenesisState {
 	return &GenesisState{
 		StoredGameList: []*StoredGame{},
 		NextGame: &NextGame{
-			Creator: "",
 			IdValue: uint64(DefaultIndex),
 		},
 		// this line is used by starport scaffolding # genesis/types/default
