@@ -14,8 +14,6 @@ func DefaultGenesis() *GenesisState {
 		NextGame: &NextGame{
 			IdValue: uint64(DefaultIndex),
 		},
-		// this line is used by starport scaffolding # genesis/types/default
-		Params: DefaultParams(),
 	}
 }
 
